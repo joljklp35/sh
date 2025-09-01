@@ -419,6 +419,7 @@ main() {
     echo "开始初始化，清空 /etc/motd ..."
     echo "" >/etc/motd
     [ -d /etc/update-motd.d/ ] &&  rm -f /etc/update-motd.d/*
+    sed -i '/^#\?PrintLastLog/c\PrintLastLog no' /etc/ssh/sshd_config
     echo "检测操作系统..."
     detect_os
     echo "检测到操作系统: $OS"
