@@ -1,6 +1,4 @@
 #!/bin/sh
-set -e
-
 ALLOWED_OPTIONS="d h ip dns"
 REQUIRED_OPTIONS=""
 
