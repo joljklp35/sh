@@ -131,14 +131,14 @@ configure_resolved() {
         cat <<EOF >/etc/systemd/resolved.conf
 [Resolve]
 DNS=$dns
-FallbackDNS=8.8.8.8
+FallbackDNS=8.8.8.8 8.8.4.4 1.1.1.1 1.0.0.1
 EOF
     else
         echo "没有提供 DNS 参数，设置 DNS 为 8.8.8.8"
         cat <<EOF >/etc/systemd/resolved.conf
 [Resolve]
-DNS=8.8.8.8
-FallbackDNS=8.8.4.4
+DNS=8.8.8.8 8.8.4.4
+FallbackDNS=1.1.1.1 1.0.0.1
 EOF
     fi
     systemctl unmask systemd-resolved
